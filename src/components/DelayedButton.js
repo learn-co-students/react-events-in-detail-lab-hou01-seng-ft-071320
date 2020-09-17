@@ -5,7 +5,9 @@ export default class DelayedButton extends React.Component{
 
     passOn = (e) => {
         e.persist()
-        this.props.onDelayedClick(e)
+        window.setTimeout(() => {
+            this.props.onDelayedClick(e);
+        }, this.props.delay);
     }
 
     render() {
